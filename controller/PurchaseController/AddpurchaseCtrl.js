@@ -17,7 +17,6 @@ const Getdata = async (req, resp) => {
 
     } catch (error) {
         resp.status(404).json(message.error)
-
     }
 }
 const Postdata = async (req, resp) => {

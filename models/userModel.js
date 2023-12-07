@@ -80,9 +80,9 @@ module.exports = mongoose.model("User", userSchema);
 
 
 // {
-//   "firstname":"ndf",
-//   "lastname":"ffrf",
-//   "email":"eghdje",
-//   "password":"gdcfgbd",
-//   "mobile":"jedc"
+//   "firstname":"nd11f",
+//   "lastname":"f1rf",
+//   "email":"frgvrfgt",
+//   "password":"123",
+//   "mobile":"jed1c"
 // }
