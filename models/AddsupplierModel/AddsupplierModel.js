@@ -2,23 +2,21 @@ const mongoose = require("mongoose");
 
 const department = mongoose.Schema({
 
-    Dinning: {
+    name: {
         type: String,
         required: true,
     },
-    Email:
+    phone:
     {
         type: String,
         required: true,
     },
-    Phone: {
-        type: String,
-        required: true,
-    },
-    Address:
+    address:
     {
         type: String,
         required: true,
     }
 })
-module.exports = mongoose.model("dinnings", department);
+module.exports = mongoose.model("suppliers", department);
+
+

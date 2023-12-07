@@ -1,6 +1,6 @@
 const express = require("express");
 const {GetALLdata, Getdata, Postdata, Putdata, DeleteData } =
- require('../../controller/CustumerController/custumerTakeawyCtrl')
+ require('../../controller/CustumerController/AddCustumerCtrl')
 const router = express.Router();
 
 

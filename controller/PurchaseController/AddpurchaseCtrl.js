@@ -19,31 +19,46 @@ const Getdata = async (req, resp) => {
         resp.status(404).json(message.error)
     }
 }
+
+let vendorCounter = 0;
+
+async function getVendorCounter() {
+    try {
+        const count = await stockTransfer.countDocuments();
+        vendorCounter = count;
+    } catch (error) {
+        console.error("Error retrieving vendor counter:", error.message);
+    }
+}
+
+getVendorCounter();
+
+function generateVendorID() {
+    vendorCounter++;
+    const formattedVendorID = `SUP${vendorCounter.toString().padStart(4,'0')}`;
+    return formattedVendorID;
+}
+
+
 const Postdata = async (req, resp) => {
     const {
-        Dinning,
-        Email,
-        Phone,
-        Address
+
+        purcahseInvoiceProduct,
+        supplierMemoNo,
+        date,
+        purchaseNote,
+        discount,
+        paidAmount
     } = req.body;
 
-    const findUserd = [
-        { Email },
-        { Phone }
-
-    ];
-
-    for (const findUserdItem of findUserd) {
-        const foundUser = await db.findOne(findUserdItem);
-        if (foundUser) {
-            return resp.json({ [Object.keys(findUserdItem)[0]]: true });
-        }
-    }
     const newUser = await db.create({
-        Dinning,
-        Email,  
-        Phone,
-        Address
+        supplierId:generateVendorID(),
+        purcahseInvoiceProduct,
+        supplierMemoNo,
+        date,
+        purchaseNote,
+        discount,
+        paidAmount
     });
 
     resp.status(201).json(newUser)

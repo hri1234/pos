@@ -25,9 +25,10 @@ app.use("/api/product", productRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/coupon", couponRouter);
 app.use("/api/upload", uploadRouter);
-app.use('/api/custumerdinning', require('./routes/CustumerRoute/custumerDinningRoute'))
-app.use('/api/custumerTakeawy', require('./routes/CustumerRoute/custumerTakeawyRoute'))
+app.use('/api/addcustumer', require('./routes/CustumerRoute/AddCustumerRoute'))
 app.use('/api/addpurchase', require('./routes/PurchaseRoute/AddpurchaseRoute'))
+app.use('/api/addsupplier', require('./routes/AddsupplierRoute/AddsupplierRoute'))
+app.use('/api/printer', require('./routes/PrinterRoute/PrinterRoute'))
 
 app.use(notFound);
 app.use(errorHandler);

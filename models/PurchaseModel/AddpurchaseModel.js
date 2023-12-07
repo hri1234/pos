@@ -2,65 +2,33 @@ const mongoose = require("mongoose");
 
 const department = mongoose.Schema({
 
-    SL: {
+    purcahseInvoiceProduct:{
+        type: [],
+        required: true,
+    },
+    supplierMemoNo: {
         type: String,
         required: true,
     },
-    Product:
+    supplierMemoNo:
     {
         type: String,
         required: true,
     },
-    Quantity: {
+    date: {
         type: String,
         required: true,
     },
-    UnitPrice:
+    purchaseNote:
     {
         type: String,
         required: true,
     },
-    SalePrice: {
+    discount: {
         type: String,
         required: true,
     },
-    Total:
-    {
-        type: String,
-        required: true,
-    },
-    Supplier: {
-        type: String,
-        required: true,
-    },
-    SupplierMemo:
-    {
-        type: String,
-        required: true,
-    },
-    Date: {
-        type: String,
-        required: true,
-    },
-    PurchaseNote:
-    {
-        type: String,
-        required: true,
-    },
-    SalePrice: {
-        type: String,
-        required: true,
-    },
-    Total:
-    {
-        type: String,
-        required: true,
-    },
-    Supplier: {
-        type: String,
-        required: true,
-    },
-    SupplierMemo:
+    paidAmount:
     {
         type: String,
         required: true,
